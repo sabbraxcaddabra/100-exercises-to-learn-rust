@@ -3,7 +3,19 @@
 // - `quantity`, an unsigned integer
 //
 // It should also have a method named `is_available` that returns a `true` if the quantity is
-// greater than 0, otherwise `false`.
+// greater than 0, otherwise `false`
+//
+
+struct Order {
+    price: u32,
+    quantity: u32,
+}
+
+impl Order {
+    fn is_available(self) -> bool {
+        return self.quantity > 0;
+    }
+}
 
 #[cfg(test)]
 mod tests {

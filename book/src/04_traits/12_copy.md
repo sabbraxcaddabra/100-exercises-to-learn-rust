@@ -37,12 +37,12 @@ and then passes that new instance to `consumer`. It all happens behind the scene
 Types must meet a few requirements in order to be allowed to implement `Copy`.
 
 First of all, it must implement `Clone`, since `Copy` is a subtrait of `Clone`.
-This makes sense: if Rust can create a new instance of a type _implicitly_, it should
+This makes sense: if Rust can create a new instance of a type __implicitly__, it should
 also be able to create a new instance _explicitly_ by calling `.clone()`.
 
 That's not all, though. A few more conditions must be met:
 
-1. The type doesn't manage any _additional_ resources (e.g. heap memory, file handles, etc.) beyond the `std::mem::size_of`
+1. The type doesn't manage any __additional__ resources (e.g. heap memory, file handles, etc.) beyond the `std::mem::size_of`
    bytes that it occupies in memory.
 2. The type is not a mutable reference (`&mut T`).
 
